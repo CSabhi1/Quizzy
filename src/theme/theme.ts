@@ -99,20 +99,16 @@ const theme = createTheme({
 		MuiTextField: {
 			styleOverrides: {
 				root: {
-					backgroundColor: "#f6f9f8",
-
 					fontSize: FONT_SIZES.small,
 					"& .MuiInputBase-input": {
 						fontSize: FONT_SIZES.small,
 					},
 					"& .MuiOutlinedInput-root": {
-						borderRadius: "8px",
-						"&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-							// border: "1px solid grey",
-						},
+						borderRadius: "7px",
+						"&.Mui-focused .MuiOutlinedInput-notchedOutline": {},
 					},
 					"& .MuiOutlinedInput-notchedOutline": {
-						border: "1px solid #aaaaaa ", // Default border color
+						border: "1px solid rgb(226, 226, 226) ", // Default border color
 					},
 					"&:hover .MuiOutlinedInput-notchedOutline": {
 						border: "1px solid green", // Border color on hover
@@ -136,8 +132,8 @@ const theme = createTheme({
 
 		MuiFormHelperText: {
 			styleOverrides: {
-				root: ({ theme }) => ({
-					color: theme.palette.primary.main,
+				root: () => ({
+					color: "#e01313",
 					fontSize: FONT_SIZES.inputError,
 					display: "inline-block",
 					margin: 0,

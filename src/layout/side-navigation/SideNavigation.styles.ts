@@ -1,4 +1,4 @@
-import { Box, Drawer, styled } from "@mui/material";
+import { Box, Drawer, styled, Typography } from "@mui/material";
 
 export const MuiDrawer = styled(Drawer)({
 	flexShrink: 0,
@@ -31,3 +31,10 @@ export const HeaderWraper = styled(Box)<HeaderWrapperProps>(({ theme, open }) =>
 				margin: 17,
 		  }
 );
+
+export const LogoTitle = styled(Typography)({
+	fontFamily: '"Montserrat Alternates", sans-serif',
+	fontStyle: "normal",
+	fontWeight: 600,
+	fontSize: 17,
+});

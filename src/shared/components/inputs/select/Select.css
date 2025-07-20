@@ -1,0 +1,22 @@
+.select-wrapper {
+	font-size: 16px !important; /* Replace with actual font size */
+}
+
+.select-wrapper .label {
+	margin-bottom: 8px !important;
+	font-weight: 500;
+	font-size: 16px; /* Replace with actual font size */
+}
+
+.select-wrapper div[class*="-MenuPortal"] {
+	z-index: 9999 !important;
+}
+
+.select-wrapper .select__menu {
+	z-index: 1000000 !important;
+}
+
+.select-wrapper .error-text {
+	color: #ff0000; /* Replace with actual primary color */
+	font-size: 12px;
+}

@@ -34,10 +34,9 @@ export const FormWrapper = styled(Box)({
 });
 
 export const GoogleButton = styled(Button)({
-	borderColor: "#aaaaaa",
+	borderColor: "rgb(226, 226, 226)",
 	color: "#696969",
 	marginTop: 10,
-	backgroundColor: "#f6f9f8",
 	textTransform: "none",
 	fontWeight: 500,
 });

@@ -3,7 +3,7 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 
 import { Title, Value } from "./Dashboard.styles";
-import { Card } from "@app/shared/components/utils";
+import { Card } from "@app/shared/components/surface";
 
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";

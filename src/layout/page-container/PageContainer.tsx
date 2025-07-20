@@ -2,14 +2,14 @@ import { Box, styled, Typography } from "@mui/material";
 
 //Styled component for page container with responsive padding.
 const PageContainerWrapper = styled(Box)(({ theme }) => ({
-	padding: theme.spacing(10, 4, 0, 4),
+	padding: theme.spacing(10, 4, 5, 4),
 
 	[theme.breakpoints.down("md")]: {
-		padding: theme.spacing(10, 3, 0, 3),
+		padding: theme.spacing(10, 3, 5, 3),
 	},
 
 	[theme.breakpoints.down("sm")]: {
-		padding: theme.spacing(10, 3, 0, 3),
+		padding: theme.spacing(10, 3, 5, 3),
 	},
 }));
 
@@ -33,7 +33,7 @@ const PageContainer: React.FC<PageContainerProps> = ({
 					<Typography
 						sx={{
 							fontSize: "20px",
-							fontWeight: 600,
+							fontWeight: 700,
 						}}
 					>
 						{title}

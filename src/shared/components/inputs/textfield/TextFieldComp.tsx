@@ -12,7 +12,7 @@ type inputPops = {
 	errors?: string;
 	inputType?: string; // Optional input type
 	isHideLabel?: boolean;
-	label: string;
+	label?: string;
 	placeholder?: string;
 	disable?: boolean;
 	requiredLabel?: boolean;
@@ -26,7 +26,6 @@ function TextFieldComp({
 	field,
 	label,
 	placeholder,
-	isHideLabel = false,
 	disable,
 	requiredLabel,
 	multiline = false,
@@ -35,7 +34,7 @@ function TextFieldComp({
 }: inputPops) {
 	return (
 		<>
-			{!isHideLabel && (
+			{label && (
 				<FormLabel label={label} requiredLabel={requiredLabel}></FormLabel>
 			)}
 

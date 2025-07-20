@@ -10,7 +10,6 @@ import {
 	ListItemText,
 	Theme,
 	useMediaQuery,
-	Typography,
 	Stack,
 	Button,
 } from "@mui/material";
@@ -20,7 +19,7 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import SwapHorizOutlinedIcon from "@mui/icons-material/SwapHorizOutlined";
 import logo from "@app/assets/images/logo.png";
-import { HeaderWraper, MuiDrawer } from "./SideNavigation.styles";
+import { HeaderWraper, LogoTitle, MuiDrawer } from "./SideNavigation.styles";
 
 // Define drawer width for consistent styling
 const drawerWidth = "15em";
@@ -90,16 +89,7 @@ export const SideNavigation: React.FC<SideNavigationProps> = ({
 				{open && (
 					<Stack direction="row" alignItems="center" gap={1}>
 						<img style={{ width: 23 }} src={logo} alt="Logo" />
-						<Typography
-							fontWeight={600}
-							fontSize={17}
-							sx={{
-								fontFamily: '"Montserrat Alternates", sans-serif',
-								fontStyle: "normal",
-							}}
-						>
-							Quizzy
-						</Typography>
+						<LogoTitle>Quizzy</LogoTitle>
 					</Stack>
 				)}
 
@@ -124,14 +114,17 @@ export const SideNavigation: React.FC<SideNavigationProps> = ({
 						onClick={handleMenuItemClick} // Closes drawer when a menu item is clicked
 					>
 						{({ isActive }) => (
-							<ListItem disablePadding sx={{ display: "block" }}>
+							<ListItem
+								disablePadding
+								sx={{ display: "block", marginBottom: 0.5 }}
+							>
 								<ListItemButton
 									selected={isActive}
 									sx={{
 										minHeight: 48,
 										px: 2.5,
 										justifyContent: open ? "initial" : "center",
-										borderRadius: 0.8,
+										borderRadius: open ? 0.8 : 0,
 										backgroundColor: isActive ? "#e4ecea" : "",
 									}}
 								>

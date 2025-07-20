@@ -10,8 +10,8 @@ import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useDispatch } from "react-redux";
-import { AppDispatch } from "@app/redux/store";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "@app/redux/store";
 import { signOutUser } from "@app/redux/slices/AuthSlice";
 
 // Define the prop types for the Header component
@@ -20,13 +20,13 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ handleDrawer }) => {
+	const dispatch = useDispatch<AppDispatch>();
 	const theme = useTheme();
 	const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+	const { user } = useSelector((state: RootState) => state.auth);
 
 	// State to manage the user menu anchor element
 	const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
-
-	const dispatch = useDispatch<AppDispatch>();
 
 	const handleLogout = async () => {
 		await dispatch(signOutUser());
@@ -83,7 +83,11 @@ const Header: React.FC<HeaderProps> = ({ handleDrawer }) => {
 							onClick={openUserMenu}
 							sx={{ p: 0 }}
 						>
-							<Avatar sx={{ width: 30, height: 30 }} alt="Profile pic" />
+							<Avatar
+								src={user?.photoURL || undefined}
+								sx={{ width: 30, height: 30 }}
+								alt={user?.displayName || undefined}
+							/>
 						</IconButton>
 
 						{/* User menu dropdown */}

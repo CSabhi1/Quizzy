@@ -15,10 +15,10 @@ const StyledLabel = styled(Typography)(({ theme }) => ({
 	gap: "4px",
 }));
 
-const RequiredLabel = styled(Typography)(({ theme }) => ({
-	color: theme.palette.primary.main,
+const RequiredLabel = styled(Typography)({
+	color: "#e01313",
 	fontWeight: 600,
-}));
+});
 
 const FormLabel: React.FC<FormControlLabelProps> = ({
 	label,

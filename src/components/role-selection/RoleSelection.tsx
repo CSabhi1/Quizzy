@@ -1,7 +1,9 @@
 import { Box, Button, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import Grid from "@mui/material/Grid2";
+import { useSelector } from "react-redux";
 
+import { RootState } from "@app/redux/store";
 import {
 	RoleCaption,
 	RoleCard,
@@ -15,12 +17,13 @@ import QuizOutlinedIcon from "@mui/icons-material/QuizOutlined";
 
 const RoleSelection: React.FC = () => {
 	const navigate = useNavigate();
+	const { user } = useSelector((state: RootState) => state.auth);
 
 	return (
 		<SelectionWraper>
 			<SelectionContainer>
 				<Typography sx={{ fontWeight: 600, fontSize: "26px" }} variant="h6">
-					Welcome, Abhijith!
+					Welcome, {user?.displayName}!
 				</Typography>
 				<Typography sx={{ color: "#4a4a4a", fontWeight: 500 }}>
 					How would you like to use Quizzy today?
